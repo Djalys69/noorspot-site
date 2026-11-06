@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NoorSpot: moschee, orari di preghiera, Qibla, Corano</title>
+<meta name="description" content="La mappa collaborativa di moschee e sale di preghiera, con orari di preghiera, Qibla in realtà aumentata, Corano, invocazioni, guida a Umrah e Hajj, traduzione in diretta dei sermoni e luoghi per nuotare (burkini).">
+<meta name="theme-color" content="#163F24">
+<link rel="canonical" href="https://noorspot.com/it/index.html">
+<link rel="alternate" hreflang="fr" href="https://noorspot.com/fr/index.html">
+<link rel="alternate" hreflang="en" href="https://noorspot.com/en/index.html">
+<link rel="alternate" hreflang="ar" href="https://noorspot.com/ar/index.html">
+<link rel="alternate" hreflang="ru" href="https://noorspot.com/ru/index.html">
+<link rel="alternate" hreflang="es" href="https://noorspot.com/es/index.html">
+<link rel="alternate" hreflang="it" href="https://noorspot.com/it/index.html">
+<link rel="alternate" hreflang="tr" href="https://noorspot.com/tr/index.html">
+<link rel="alternate" hreflang="x-default" href="https://noorspot.com/en/index.html">
+<meta property="og:title" content="NoorSpot: moschee, orari di preghiera, Qibla, Corano">
+<meta property="og:description" content="La mappa collaborativa di moschee e sale di preghiera, con orari di preghiera, Qibla in realtà aumentata, Corano, invocazioni, guida a Umrah e Hajj, traduzione in diretta dei sermoni e luoghi per nuotare (burkini).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://noorspot.com/it/index.html">
+<meta property="og:image" content="https://noorspot.com/img/welcome.jpg">
+<link rel="icon" href="../img/favicon.png">
+<link rel="stylesheet" href="../style.css?v=1793937353797">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"NoorSpot","applicationCategory":"LifestyleApplication","operatingSystem":"iOS, Android","description":"The community map of mosques and prayer rooms, with prayer times, augmented-reality Qibla, Quran, supplications, Umrah & Hajj guide, live sermon translation and swimming places (burkini).","publisher":{"@type":"Organization","name":"MasjidSpot LLC","email":"contact@noorspot.com"}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="logo" href="index.html"><img src="../img/logo.png" alt=""> <span class="wm">Noor<span class="sp">Spot</span></span></a>
+<input type="checkbox" id="nv" class="nvt" aria-label="Menu"><label for="nv" class="burger" aria-hidden="true">☰</label>
+<nav class="main"><a href="index.html" class="on">Home</a><a href="features.html" class="x">Funzionalità</a><a href="download.html" class="x">Download</a><a href="premium.html" class="x">Premium</a><a href="partners.html" class="x pro">Professionisti</a><a href="support.html" class="x">Supporto</a><select class="lang" aria-label="Lingua" onchange="location.href=this.value"><option value="../fr/index.html">Français</option><option value="../en/index.html">English</option><option value="../ar/index.html">العربية</option><option value="../ru/index.html">Русский</option><option value="../es/index.html">Español</option><option value="../it/index.html" selected>Italiano</option><option value="../tr/index.html">Türkçe</option></select></nav>
+</div></header>
+
+
+<section class="ptband" id="pt"><div class="wrap">
+<div class="ptrow1">
+<div class="ptwhere"><div class="ptplace">📍 <span id="pt-place">Makkah</span></div><div class="ptclock"><b id="pt-clock">--:--:--</b></div><div class="pthijri" id="pt-hijri"></div></div>
+<div class="ptnext"><div class="ptlabel">Prossima preghiera</div><div class="ptnl"><span class="ptname" id="pt-name">--</span><span class="ptcount" id="pt-count">--:--:--</span></div></div>
+<form class="ptform" id="pt-form" autocomplete="off">
+<button type="button" class="ptbtn" id="pt-geo" title="La mia posizione">📍 <span>La mia posizione</span></button>
+<input type="text" id="pt-q" placeholder="Città o paese" aria-label="Città o paese">
+<button type="submit" class="ptbtn alt">Cerca</button>
+</form>
+</div>
+<div class="ptgrid"><div class="ptc" data-k="Fajr"><span class="pn">Fajr</span><span class="pv" id="pv-Fajr">--:--</span></div><div class="ptc" data-k="Sunrise"><span class="pn">Shuruq</span><span class="pv" id="pv-Sunrise">--:--</span></div><div class="ptc" data-k="Dhuhr"><span class="pn">Dhuhr</span><span class="pv" id="pv-Dhuhr">--:--</span></div><div class="ptc" data-k="Asr"><span class="pn">Asr</span><span class="pv" id="pv-Asr">--:--</span></div><div class="ptc" data-k="Maghrib"><span class="pn">Maghrib</span><span class="pv" id="pv-Maghrib">--:--</span></div><div class="ptc" data-k="Isha"><span class="pn">Isha</span><span class="pv" id="pv-Isha">--:--</span></div></div>
+<div class="ptfoot"><span class="ptmsg" id="pt-msg" aria-live="polite"></span><span class="ptnote">Orari calcolati per la tua posizione. Verifica con la tua moschea.</span></div>
+</div>
+</section>
+<script>
+(function(){
+var S={"pt_loading":"Caricamento…","pt_denied":"Posizione negata: scegli una città.","pt_error":"Impossibile caricare gli orari. Riprova.","pt_in":"tra","pt_after":"","pt_placeholder":"Città o paese"};var NAMES={"Fajr":"Fajr","Sunrise":"Shuruq","Dhuhr":"Dhuhr","Asr":"Asr","Maghrib":"Maghrib","Isha":"Isha"};var LANG="it";
+var KEYS=['Fajr','Sunrise','Dhuhr','Asr','Maghrib','Isha'];var NEXTK=['Fajr','Dhuhr','Asr','Maghrib','Isha'];
+var st={lat:21.4225,lon:39.8262,place:'Makkah',tz:null,secs:null,date:null,loading:false};
+function $(id){return document.getElementById(id)}
+function pad(n){return (n<10?'0':'')+n}
+function msg(t){$('pt-msg').textContent=t||''}
+function nowIn(tz){var p={};try{new Intl.DateTimeFormat('en-GB',{timeZone:tz,hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});}catch(e){var d=new Date();return {d:d.getDate(),mo:d.getMonth()+1,y:d.getFullYear(),h:d.getHours(),m:d.getMinutes(),s:d.getSeconds()}}
+return {y:+p.year,mo:+p.month,d:+p.day,h:(+p.hour)%24,m:+p.minute,s:+p.second}}
+function fmt(sec){sec=Math.max(0,Math.floor(sec));return pad(Math.floor(sec/3600))+':'+pad(Math.floor(sec%3600/60))+':'+pad(sec%60)}
+function load(dateStr){
+  st.loading=true;msg(S.pt_loading);
+  var url='https://api.aladhan.com/v1/timings'+(dateStr?'/'+dateStr:'')+'?latitude='+st.lat+'&longitude='+st.lon;
+  fetch(url).then(function(r){return r.json()}).then(function(j){
+    var t=j.data.timings;st.tz=j.data.meta.timezone;st.date=j.data.date.gregorian.date;st.secs={};
+    KEYS.forEach(function(k){var hm=String(t[k]).split(' ')[0].split(':');st.secs[k]=(+hm[0])*3600+(+hm[1])*60;$('pv-'+k).textContent=pad(+hm[0])+':'+pad(+hm[1])});
+    var n=nowIn(st.tz);var today=pad(n.d)+'-'+pad(n.mo)+'-'+n.y;
+    if(!dateStr&&st.date!==today){load(today);return}
+    st.loading=false;msg('');tick();
+  }).catch(function(){st.loading=false;msg(S.pt_error)});
+}
+function hijri(){
+  if(!st.tz||!st.secs)return '';
+  try{
+    var d=new Date();var n=nowIn(st.tz);var cur=n.h*3600+n.m*60+n.s;
+    if(cur>=st.secs.Maghrib)d=new Date(d.getTime()+86400000);   // le jour hégirien change au coucher du soleil
+    return new Intl.DateTimeFormat(LANG+'-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric',timeZone:st.tz}).format(d);
+  }catch(e){return ''}
+}
+function tick(){
+  if(!st.tz||!st.secs)return;
+  var n=nowIn(st.tz);var cur=n.h*3600+n.m*60+n.s;
+  var today=pad(n.d)+'-'+pad(n.mo)+'-'+n.y;
+  if(st.date&&today!==st.date&&!st.loading){load(today);return}
+  $('pt-clock').textContent=pad(n.h)+':'+pad(n.m)+':'+pad(n.s);
+  var hj=hijri();if($('pt-hijri').textContent!==hj)$('pt-hijri').textContent=hj;
+  var nk=null,target=0;
+  for(var i=0;i<NEXTK.length;i++){if(st.secs[NEXTK[i]]>cur){nk=NEXTK[i];target=st.secs[nk];break}}
+  if(!nk){nk='Fajr';target=st.secs.Fajr+86400}
+  var label=NAMES[nk];
+  $('pt-name').textContent=label;
+  $('pt-count').textContent=(S.pt_in?S.pt_in+' ':'')+fmt(target-cur)+(S.pt_after?' '+S.pt_after:'');
+  var cells=document.querySelectorAll('.ptc');
+  var ck='Isha';for(var q=0;q<KEYS.length;q++){if(st.secs[KEYS[q]]<=cur)ck=KEYS[q]}
+  for(var j=0;j<cells.length;j++){cells[j].className='ptc'+(cells[j].getAttribute('data-k')===ck?' on':'')}
+}
+function setLoc(lat,lon,place,save){
+  st.lat=lat;st.lon=lon;st.place=place||(lat.toFixed(2)+', '+lon.toFixed(2));$('pt-place').textContent=st.place;
+  if(save){try{localStorage.setItem('ns_loc',JSON.stringify({lat:lat,lon:lon,place:st.place,cc:st.cc||null}))}catch(e){}}
+  window.NS_CC=st.cc||'SA';if(window.nsSponsor)window.nsSponsor(window.NS_CC);
+  load();
+}
+function reverse(lat,lon){
+  return fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+lat+'&longitude='+lon+'&localityLanguage='+LANG).then(function(r){return r.json()}).then(function(j){if(j.countryCode)st.cc=j.countryCode;
+    var c=j.city||j.locality||j.principalSubdivision||'';return c?(c+(j.countryName?', '+j.countryName:'')):null}).catch(function(){return null});
+}
+function geo(auto){
+  if(!navigator.geolocation){msg(S.pt_denied);return}
+  navigator.geolocation.getCurrentPosition(function(p){
+    var lat=p.coords.latitude,lon=p.coords.longitude;
+    reverse(lat,lon).then(function(name){setLoc(lat,lon,name,true)});
+  },function(){msg(S.pt_denied)},{timeout:12000,maximumAge:600000});
+}
+$('pt-geo').addEventListener('click',function(){geo(false)});
+$('pt-form').addEventListener('submit',function(e){
+  e.preventDefault();var q=$('pt-q').value.trim();if(!q)return;msg(S.pt_loading);
+  fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(q)+'&count=1&language='+LANG+'&format=json').then(function(r){return r.json()}).then(function(j){
+    if(!j.results||!j.results.length){msg(S.pt_error);return}
+    var r=j.results[0];if(r.country_code)st.cc=String(r.country_code).toUpperCase();setLoc(r.latitude,r.longitude,r.name+(r.country?', '+r.country:''),true);
+  }).catch(function(){msg(S.pt_error)});
+});
+var saved=null;try{saved=JSON.parse(localStorage.getItem('ns_loc')||'null')}catch(e){}
+$('pt-place').textContent=st.place;
+if(saved&&saved.lat){if(saved.cc)st.cc=saved.cc;setLoc(saved.lat,saved.lon,saved.place,false)}
+else{load();geo(true)}
+setInterval(tick,1000);
+})();
+</script>
+
+<section class="spband" id="sp" hidden><div class="wrap">
+<a class="spcard" id="sp-a" target="_blank" rel="noopener sponsored">
+<img id="sp-img" alt="" hidden>
+<span class="spmid"><span class="splabel">Sponsorizzato</span><b id="sp-name"></b><span id="sp-tag"></span><em id="sp-offer"></em></span>
+<span class="spcta" id="sp-cta"></span>
+</a>
+</div></section>
+<script>
+(function(){
+var C={"url":"https://setgjzlzgnbnanctjvnp.supabase.co","key":"sb_publishable_vlrOhlgAheU-KaU4S6p6uw_-y-TX9dd","lang":"it","visit":"Scopri","call":"Chiama","dir":"Indicazioni"};var shown=null,logged={};
+function rpc(fn,body){return fetch(C.url+'/rest/v1/rpc/'+fn,{method:'POST',headers:{apikey:C.key,Authorization:'Bearer '+C.key,'Content-Type':'application/json'},body:JSON.stringify(body),keepalive:true})}
+function set(id,v){var e=document.getElementById(id);e.textContent=v||'';e.hidden=!v}
+window.nsSponsor=function(cc){
+  rpc('get_active_sponsors',{p_country:cc||null,p_city:null,p_placement:'home'}).then(function(r){return r.ok?r.json():[]}).then(function(list){
+    var box=document.getElementById('sp');
+    if(!list||!list.length){box.hidden=true;return}
+    var s=list[0];shown=s;
+    set('sp-name',s.name);
+    set('sp-tag',(s.tagline_i18n&&s.tagline_i18n[C.lang])||s.tagline||'');
+    set('sp-offer',(s.offer_i18n&&s.offer_i18n[C.lang])||s.offer||'');
+    var img=document.getElementById('sp-img'),pic=s.logo_url||s.image_url;
+    if(pic&&/^https:/i.test(pic)){img.src=pic;img.hidden=false}else{img.hidden=true}
+    var href=null;
+    if(s.cta==='call'&&s.phone)href='tel:'+String(s.phone).replace(/s+/g,'');
+    else if(s.cta==='directions')href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(s.address||(s.name+' '+(s.city||'')));
+    else if(s.link_url)href=s.link_url;
+    var a=document.getElementById('sp-a');
+    if(href&&/^(https?:|tel:)/i.test(href)){a.href=href}else{a.removeAttribute('href')}
+    set('sp-cta',href?(s.cta==='call'?C.call:s.cta==='directions'?C.dir:C.visit):'');
+    box.hidden=false;
+    if(!logged[s.id]){logged[s.id]=1;rpc('log_sponsor_event',{p_sponsor:s.id,p_kind:'impression',p_source:'web'}).catch(function(){})}
+  }).catch(function(){});
+};
+document.getElementById('sp-a').addEventListener('click',function(){if(shown)rpc('log_sponsor_event',{p_sponsor:shown.id,p_kind:'click',p_source:'web'}).catch(function(){})});
+window.nsSponsor(window.NS_CC||'SA');
+})();
+</script>
+<section class="hero"><div class="wrap">
+<div>
+<div class="tag">Community Masjid Finder</div>
+<h1>Trova la tua moschea. Insieme.</h1>
+<p class="sub">NoorSpot è la mappa collaborativa delle moschee e dei luoghi di preghiera: orari di preghiera, Qibla, traduzione dei sermoni in diretta, nuoto con il burkini… e una comunità che si aiuta.</p>
+<div class="soon">Presto disponibile su</div>
+<div class="badges"><span class="badge off"><span></span><span>App Store</span></span><span class="badge off"><span>▶</span><span>Google Play</span></span></div>
+</div>
+<div class="phone"><img src="../img/welcome.jpg" alt="NoorSpot"></div>
+</div></section>
+
+<section class="block"><div class="wrap">
+<div class="grid hl">
+<a class="card hlc" href="features.html"><div class="ic">🤝</div><h3>Fatta dalla comunità</h3><p>Aggiungi, correggi e conferma i luoghi: ogni contributo aiuta un fratello o una sorella in viaggio.</p><span class="more">Scopri di più →</span></a>
+<a class="card hlc" href="features.html"><div class="ic">🎙️</div><h3>Traduzione del sermone in diretta</h3><p>Segui la khutba del venerdì tradotta in tempo reale nella tua lingua.</p><span class="more">Scopri di più →</span></a>
+<a class="card hlc" href="features.html"><div class="ic">🏊</div><h3>Nuoto e burkini</h3><p>Spiagge, laghi, piscine: trova i luoghi dove è consentito nuotare con il burkini.</p><span class="more">Scopri di più →</span></a>
+</div></div></section>
+
+<section class="pro-sec"><div class="wrap">
+<div class="pro-card">
+<div class="pro-left">
+<div class="pro-tag">Per i professionisti</div>
+<h2>Moschee, associazioni, attività halal: diventa partner</h2>
+<p>Fai conoscere il tuo luogo o la tua attività alla comunità NoorSpot: scheda in evidenza, orari ufficiali, annunci e visibilità locale.</p>
+<ul><li>Moschee e associazioni: orari ufficiali e annunci</li><li>Ristoranti, negozi e servizi halal: visibilità locale</li><li>Marchi e organizzatori: campagne mirate ed eventi</li></ul>
+<a class="btn gold" href="partners.html">Diventa partner →</a>
+</div>
+<div class="pro-right" aria-hidden="true"><span>🕌</span><span>🍽️</span><span>🛍️</span><span>📣</span></div>
+</div>
+</div></section>
+
+<section class="block light"><div class="wrap two">
+<div>
+<h2 class="t">Un'app fatta insieme a te</h2>
+<p class="lead" style="margin-bottom:6px">NoorSpot cresce grazie a chi la usa. Ogni luogo aggiunto, ogni foto e ogni recensione aiuta un altro musulmano a pregare in orario, vicino a casa o in viaggio.</p>
+<ul class="ticks"><li>Aggiungi un luogo in pochi secondi e completalo con le tue foto.</li><li>Lascia una recensione sincera: un'IA verifica ogni contenuto e protegge la comunità.</li><li>Guadagna hasanettes (buone azioni) a ogni contributo.</li></ul>
+<p style="margin-top:20px"><a class="btn dark" href="features.html">Funzionalità →</a></p>
+</div>
+<img src="../img/find.jpg" alt="">
+</div></section>
+
+<section class="block aqua"><div class="wrap two">
+<div>
+<h2 class="t">Nuoto: trova dove nuotare in serenità</h2>
+<p class="lead" style="margin:0">Le piscine comunali spesso rifiutano i costumi coprenti. NoorSpot raccoglie le spiagge, i laghi e le piscine private dove sono ammessi, con recensioni e foto scattate sul posto e verificate dall'IA. Un luogo è «Certified» a partire da 10 recensioni concordanti.</p>
+</div>
+<img src="../img/premium.jpg" alt="">
+</div></section>
+
+<section class="cta"><div class="wrap">
+<h2 class="t">Una domanda, un'idea, una collaborazione?</h2>
+<p class="lead" style="margin:0 auto 22px">Scrivici: rispondiamo entro 48 ore.</p>
+<a class="btn" href="download.html">Download</a>
+</div></section>
+<footer class="foot"><div class="wrap">
+<div><strong>NoorSpot</strong><br>© 2026 MasjidSpot LLC · Tutti i diritti riservati<br><a href="mailto:contact@noorspot.com">contact@noorspot.com</a></div>
+<nav><a href="privacy.html">Privacy</a><a href="terms.html">Condizioni d'uso</a><a href="support.html">Supporto</a><a href="partners.html">Partner</a><a href="delete-account.html">Elimina il mio account</a></nav>
+</div></footer>
+</body>
+</html>
